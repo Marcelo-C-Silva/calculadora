@@ -29,13 +29,24 @@ class CalcController {
 
     }
 
+    execBtn(value){
+
+        switch (value){
+
+            case 'ac':
+            break;
+        }
+    }
+
     initButtonsEvents(){
         let buttons = document.querySelectorAll("#buttons > g, #parts > g");
 
         buttons.forEach((btn, index)=>{
             
             this.addEventListenerAll(btn, "click drag", e =>{
-                console.log(btn.className.baseVal.replace("btn-",""));
+                    let textBtn = btn.className.baseVal.replace("btn-", "");
+
+                    this.execBtn(textBtn);
 
             });
 
