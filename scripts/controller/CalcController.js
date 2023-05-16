@@ -51,11 +51,14 @@ class CalcController {
 
     pushOperation(value){
         this._operation.push(value);
+
+        if(this._operation.length > 3){
+            console.log(this._operation);
+        }
     }
 
     addOperation(value){
 
-        console.log('A', value ,isNaN(this.getLastOperation()));
 
         if (isNaN(this.getLastOperation())){
 
@@ -65,7 +68,7 @@ class CalcController {
 
             }else if(isNaN(value)) {
 
-                console.log(value);
+                console.log('outra coisa', value);
             
             
             }else{
@@ -86,8 +89,6 @@ class CalcController {
             }
             
         }
-
-        console.log(this._operation);
 
     }
 
