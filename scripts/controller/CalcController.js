@@ -95,6 +95,8 @@ class CalcController {
             
             }else{
                 this.pushOperation(value);
+                this.setLastNumberToDisplay();
+
             }
 
 
