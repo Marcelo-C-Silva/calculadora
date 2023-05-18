@@ -65,7 +65,7 @@ class CalcController {
         if (last == '%'){
 
             result /= 100;
-            this._operation = result;
+            this._operation = [result];
             
         }else{
 
