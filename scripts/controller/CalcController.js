@@ -22,6 +22,7 @@ class CalcController {
 
         }, 1000);
 
+        this.setLastNumberToDisplay();
     }
     addEventListenerAll(element, events, fn){
         events.split(' ').forEach(event => {
@@ -32,9 +33,13 @@ class CalcController {
     clearAll(){
         this._operation = [];
 
+        this.setLastNumberToDisplay();
+
     }
     clearEntry(){
         this._operation.pop();
+
+        this.setLastNumberToDisplay();
 
     }
     getLastOperation(){
@@ -86,6 +91,10 @@ class CalcController {
                 break;
             }
         }
+
+        if (!lastNumber) lastNumber = 0;
+
+        
 
         this.displayCalc = lastNumber;
     }
