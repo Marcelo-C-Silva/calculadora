@@ -60,6 +60,11 @@ class CalcController {
     }
     calc(){
         let last = this._operation.pop();
+        if (last == '%'){
+            
+        }else{
+            
+        }
         let result = eval(this._operation.join(""));
 
         this._operation = [result, last];
