@@ -1,6 +1,8 @@
 class CalcController {
 
     constructor(){
+        this._lastOperator = '';
+        this._lastNumber ='';
         this._operation = [];
         this._locale = 'pt-Br';
         this._displayCalcEl = document.querySelector("#display");
@@ -63,15 +65,22 @@ class CalcController {
 
         }
     }
+
+    getResult(){
+        return eval(this._operation.join(""));
+    }
     calc(){
 
         let last = '';
 
         if (this._operation.length > 3){
             last = this._operation.pop();
+
+            let result = this.getResult();
+
         }
 
-        let result = eval(this._operation.join(""));
+        let result = this.getResult();
 
         if (last == '%'){
 
