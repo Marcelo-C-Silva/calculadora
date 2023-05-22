@@ -185,11 +185,7 @@ class CalcController {
 
                 this.setLastOperation(value);
 
-            } else if (isNaN(value)){
-
-                console.log("outra coisa",value);
-
-            } else {
+            }else{
 
                 this.pushOperation(value);
 
@@ -220,6 +216,11 @@ class CalcController {
     setError(){
 
         this.displayCalc = "Error";
+        
+    }
+
+    addDot(){
+
         
     }
 
@@ -260,7 +261,7 @@ class CalcController {
                 break;
 
             case 'ponto':
-                this.addOperation('.');
+                this.addDot();
                 break;
 
             case '0':
