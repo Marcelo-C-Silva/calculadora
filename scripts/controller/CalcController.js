@@ -16,6 +16,19 @@ class CalcController {
         this.iniKeyboard();
 
     }
+
+    pastFromClipboard(){
+
+        document.addEventListener('paste', e=>{
+
+          let text =  e.clipboardData.getData('text');
+
+          this.displayCalc = parseFloat(text);
+          
+        });
+
+    }
+
     copyToClipboard(){
 
         let input = document.createElement('input');
@@ -43,6 +56,7 @@ class CalcController {
         }, 1000);
 
         this.setLastNumberToDisplay();
+        this.pastFromClipboard();
 
     }
 
