@@ -16,6 +16,21 @@ class CalcController {
         this.iniKeyboard();
 
     }
+    copyToClipboard(){
+
+        let input = document.createElement('input');
+
+        input.value = this.displayCalc;
+
+        document.body.appendChild(input);
+
+        input.select();
+
+        document.execCommand('copy');
+
+        input.remove();
+
+    }
 
     initialize(){
 
@@ -74,6 +89,10 @@ class CalcController {
                 case '8':
                 case '9':
                     this.addOperation(parseInt(e.key));
+                    break;
+
+                case 'c':
+                    if(e.ctrlKey) this.copyToClipboard();
                     break;
     
             }
